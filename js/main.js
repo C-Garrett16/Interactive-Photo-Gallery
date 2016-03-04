@@ -13,10 +13,10 @@ $(".photoGallery li").ready(function(){
     $(".photoGallery img").each(function(){
       // If the list item does not contain the title attr, fade it out
       if ($(this).attr("alt").search(new RegExp(filter, "i")) < 0) {
-        $(this).hide("fast");
+        $(this).parent().hide("fast");
         // Show the list item if the phrase matches
       } else {
-        $(this).show("fast");
+        $(this).parent().show("fast");
       }
     });
   });
@@ -24,7 +24,7 @@ $(".photoGallery li").ready(function(){
 
 
 $(".photoGallery").lightGallery({
-  width: '700px',
+    width: '700px',
     height: '470px',
     mode: 'lg-fade',
     addClass: 'fixed-size',
